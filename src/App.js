@@ -3,9 +3,9 @@ import './assets/s3slider.css'
 import './assets/templatemo_style.css'
 import {findImagePath} from './functions.js'
 import React from "react";
-import {Content} from './components/main_page/content.js'
+import Content from './components/main_page/content.js'
 import {SubCategories} from './components/main_page/second_sub_menu.js'
-import {Categories} from './components/main_page/first_sub_menu.js'
+import Categories from './components/main_page/first_sub_menu.js'
 
 function App() {
     return (
