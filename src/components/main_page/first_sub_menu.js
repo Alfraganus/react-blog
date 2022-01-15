@@ -1,5 +1,6 @@
 import  React,{ useState } from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 const baseURL = "https://newsapi.org/v2/top-headlines/sources?apiKey=c85227fb62964655a9b5f976448dd132";
 
 
@@ -18,8 +19,12 @@ function Categories() {
     }, []);
     return (
             <ul>
-                <li><a href="index.html" className="current">business</a></li>
-                <li><a href="portfolio.html">entertainment</a></li>
+                <li>
+                    <Link  to={{ pathname: "/" }}> Everything </Link>
+               </li>
+                <li>
+                    <Link  to={{ pathname: "/entertainment" }}> Entertainment </Link>
+                </li>
                 <li><a href="about.html">general</a></li>
             </ul>
     )

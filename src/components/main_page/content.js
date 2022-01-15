@@ -1,8 +1,8 @@
 import {findImagePath} from  '../../functions.js'
 import React from "react";
-import Categories from "./first_sub_menu";
 import axios from "axios";
-const baseURL = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=c85227fb62964655a9b5f976448dd132";
+import {Link} from "react-router-dom";
+
 
 function ShowContent(post)
 {
@@ -21,7 +21,16 @@ function ShowContent(post)
                     {post.post.publishedAt} | <strong>Author:</strong> {post.post.author} <strong>Source:</strong> <a href="#">{post.post.source.name}</a>
                     <img width="420px" src={post.post.urlToImage} alt="image 1"/>
                     <p>{post.post.description}</p>
-                    <a href="blog_post.html">Continue reading...</a>
+                    <Link
+                        to={{
+                            pathname: "/detail",
+
+                        }}
+                        state={{ content:post.post.content }}
+                    >
+                       Continue reading...
+                    </Link>
+
                 </div>
             </div>
         </div>
@@ -29,15 +38,15 @@ function ShowContent(post)
 }
 
 
-function Content() {
+function Content(path) {
     const [post, setPost] = React.useState([]);
     React.useEffect(() => {
-        axios.get(baseURL).then((response) => {
+        axios.get( path.path).then((response) => {
             setPost(response.data['articles'])
         });
 
     }, []);
-
+    console.log(path.path)
     return (
         post.map((newPost, index) =>
             <ShowContent key={index} post={newPost}/>

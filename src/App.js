@@ -6,6 +6,7 @@ import React from "react";
 import Content from './components/main_page/content.js'
 import {SubCategories} from './components/main_page/second_sub_menu.js'
 import Categories from './components/main_page/first_sub_menu.js'
+import Detail from './components/main_page/news_detail.js'
 import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
 function App() {
     return (
@@ -54,8 +55,10 @@ function App() {
                     <div id="templatemo_right_column">
                         {/*content component*/}
                             <Routes>
-                                <Route exact path="/" element={<Content/>}/>
+                                <Route exact path="/" element={<Content path={'https://newsapi.org/v2/everything?q=bitcoin&apiKey=c85227fb62964655a9b5f976448dd132'}/>}/>
+                                <Route exact path="/entertainment" element={<Content path={'https://newsapi.org/v2/top-headlines?country=us&apiKey=c85227fb62964655a9b5f976448dd132'}/>}/>
                                 <Route exact path="/test" element={ <Categories/>}/>
+                                <Route exact path="/detail" element={ <Detail/>}/>
                             </Routes>
                         <div className="cleaner"></div>
                     </div>
