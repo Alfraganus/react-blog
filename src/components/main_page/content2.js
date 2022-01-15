@@ -1,8 +1,8 @@
 import {findImagePath} from  '../../functions.js'
-import React, {useEffect, useMemo} from "react";
+import React from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
-import { useLocation } from "react-router"
+
 
 function ShowContent(post)
 {
@@ -24,12 +24,12 @@ function ShowContent(post)
                     <Link
                         to={{
                             pathname: "/detail",
+
                         }}
                         state={{ content:post.post.content }}
                     >
                        Continue reading...
                     </Link>
-
                 </div>
             </div>
         </div>
@@ -37,17 +37,15 @@ function ShowContent(post)
 }
 
 
-function Content() {
-    const location = useLocation()
-
+function Content2(path) {
     const [post, setPost] = React.useState([]);
-    useEffect(() => {
-        axios.get(location.state).then((response) => {
+    React.useEffect(() => {
+        axios.get( path.path).then((response) => {
             setPost(response.data['articles'])
-        })
-    }, [ location.state])
+        });
 
-
+    }, []);
+    console.log(path.path)
     return (
         post.map((newPost, index) =>
             <ShowContent key={index} post={newPost}/>
@@ -56,4 +54,4 @@ function Content() {
     )
 }
 
-export default Content;
+export default Content2;

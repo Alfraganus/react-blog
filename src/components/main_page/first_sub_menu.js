@@ -20,10 +20,10 @@ function Categories() {
     return (
             <ul>
                 <li>
-                    <Link  to={{ pathname: "/" }}> Everything </Link>
+                    <Link to={{ pathname: "/" }}  state={ 'https://newsapi.org/v2/everything?q=bitcoin&apiKey=c85227fb62964655a9b5f976448dd132'}> Everything </Link>
                </li>
                 <li>
-                    <Link  to={{ pathname: "/entertainment" }}> Entertainment </Link>
+                    <Link to={{ pathname: "/entertainment"}} state={ 'https://newsapi.org/v2/top-headlines?country=us&apiKey=c85227fb62964655a9b5f976448dd132'}> Entertainment </Link>
                 </li>
                 <li><a href="about.html">general</a></li>
             </ul>
