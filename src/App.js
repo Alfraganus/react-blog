@@ -6,9 +6,8 @@ import React from "react";
 import Content from './components/main_page/content.js'
 import {SubCategories} from './components/main_page/second_sub_menu.js'
 import Categories from './components/main_page/first_sub_menu.js'
-import Detail from './components/main_page/news_detail.js'
-import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
-import Content2 from "./components/main_page/content2";
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+
 function App() {
     return (
         <Router>
@@ -23,7 +22,7 @@ function App() {
                         <div id="templatemo_header">
                             <div id="site_title">
                                 <h1><a href="http://www.templatemo.com"
-                                       target="_parent">Clean <strong>Blog</strong><span>Free HTML-CSS Template</span></a>
+                                       target="_parent">Alfra <strong>Blog</strong><span>News APi application</span></a>
                                 </h1>
                             </div>
                         </div>
@@ -54,13 +53,16 @@ function App() {
                     </div>
 
                     <div id="templatemo_right_column">
+                        <div id="featured_project">
+                            <img src={findImagePath('slider/1.jpg')}/>
+                        </div>
                         {/*content component*/}
                             <Routes>
                                 <Route exact path="/" element={<Content/>}/>
-                                <Route exact path="/entertainment" element={<Content/>}/>
-                                <Route exact path="/test" element={ <Categories/>}/>
-                                <Route exact path="/detail" element={ <Detail/>}/>
+                                <Route exact path="/hungary" element={<Content/>}/>
+                                <Route exact path="/ukraine" element={ <Content/>}/>
                             </Routes>
+
                         <div className="cleaner"></div>
                     </div>
                     <div className="cleaner_h20"></div>
@@ -77,5 +79,15 @@ function App() {
     );
 
 }
+
+const pageTransition = {
+    type: "tween",
+    ease: "anticipate",
+    duration: 0.5
+};
+
+const pageStyle = {
+    position: "absolute"
+};
 
 export default App;
