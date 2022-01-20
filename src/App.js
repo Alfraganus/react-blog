@@ -7,7 +7,8 @@ import Content from './components/main_page/content.js'
 import {SubCategories} from './components/main_page/second_sub_menu.js'
 import Categories from './components/main_page/first_sub_menu.js'
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
-
+import Example from "./components/main_page/content2";
+import { Container, Button, Alert } from 'react-bootstrap';
 function App() {
     return (
         <Router>
@@ -61,6 +62,7 @@ function App() {
                                 <Route exact path="/" element={<Content/>}/>
                                 <Route exact path="/hungary" element={<Content/>}/>
                                 <Route exact path="/ukraine" element={ <Content/>}/>
+                                <Route exact path="/test" element={ <Example/>}/>
                             </Routes>
 
                         <div className="cleaner"></div>

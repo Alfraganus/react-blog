@@ -1,4 +1,3 @@
-import { motion } from "framer-motion"
 import  React,{ useState } from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
@@ -19,6 +18,10 @@ function Categories() {
             <li>
                 <Link to={{pathname: "/ukraine"}}
                       state={'https://newsapi.org/v2/everything?q=ukraine&apiKey=c85227fb62964655a9b5f976448dd132'}> Ukraine </Link>
+            </li>
+            <li>
+                <Link to={{pathname: "/test"}}> transition </Link>
+
             </li>
         </ul>
         </div>
